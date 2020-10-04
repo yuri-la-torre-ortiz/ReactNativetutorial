@@ -15,3 +15,7 @@ export default function App() {
       </View>
   );
 }
+// Use a stylesheet instead of inline styling
+const styles = StyleSheet.create({
+
+});
