@@ -7,6 +7,8 @@ import {
   View,
   FlatList,
 } from "react-native";
+// the capital G in GoalItem indicates to React that it's a custom component
+import GoalItem from "./components/GoalItem";
 
 export default function App() {
   const [enteredGoal, setEnteredGoal] = useState("");
@@ -19,7 +21,7 @@ export default function App() {
   const addGoalHandler = () => {
     setCourseGoals((currentGoals) => [
       ...currentGoals,
-      { key: Math.random().toString(), value: enteredGoal },
+      { id: Math.random().toString(), value: enteredGoal },
     ]);
   };
 
@@ -36,11 +38,7 @@ export default function App() {
       </View>
       <FlatList
         data={courseGoals}
-        renderItem={(itemData) => (
-          <View style={styles.listItems}>
-            <Text>{itemData.item.value}</Text>
-          </View>
-        )}
+        renderItem={(itemData) => <GoalItem title={itemData.item.value} />}
       />
     </View>
   );
@@ -61,12 +59,5 @@ const styles = StyleSheet.create({
     borderColor: "black",
     borderWidth: 1,
     padding: 10,
-  },
-  listItems: {
-    padding: 10,
-    marginVertical: 10,
-    backgroundColor: "#ccc",
-    borderColor: "black",
-    borderWidth: 1,
   },
 });
