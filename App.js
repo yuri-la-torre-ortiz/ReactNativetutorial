@@ -7,8 +7,10 @@ import {
   View,
   FlatList,
 } from "react-native";
+import GoalInput from "./components/GoalInput";
 // the capital G in GoalItem indicates to React that it's a custom component
 import GoalItem from "./components/GoalItem";
+import GoalInput from "./components/GoalInput";
 
 export default function App() {
   const [enteredGoal, setEnteredGoal] = useState("");
@@ -28,12 +30,7 @@ export default function App() {
   return (
     <View style={styles.screen}>
       <View style={styles.inputContainer}>
-        <TextInput
-          placeholder="Course Goals"
-          style={styles.input}
-          onChangeText={goalInputHandler}
-          value={enteredGoal}
-        />
+        <GoalInput goalInputHandler={goalInputHandler} enteredGoal={enteredGoal} />
         <Button title="ADD" onPress={addGoalHandler} />
       </View>
       <FlatList
@@ -53,11 +50,5 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-  },
-  input: {
-    width: "75%",
-    borderColor: "black",
-    borderWidth: 1,
-    padding: 10,
   },
 });
