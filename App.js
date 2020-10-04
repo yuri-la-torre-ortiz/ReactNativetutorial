@@ -12,34 +12,37 @@ export default function App() {
         />
         <Button title="ADD" />
       </View>
-      <View style={{ flexDirection: 'row'}}>
+      <View 
+        style={{ 
+          flexDirection: 'row',
+          width: '80%', 
+          height: 300,
+          justifyContent: 'space-between',
+          alignItems: 'stretch' }}
+          >
         <View
           style={{
-            backgroundColor: 'red',
-            height: 100,
-            width: 100,
+            backgroundColor: 'blue',
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
+            flex: 1
           }}
         >
           <Text>1</Text>
         </View>
               <View
           style={{
-            backgroundColor: 'blue',
-            height: 100,
-            width: 100,
+            backgroundColor: 'orange',
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
+            flex: 2
           }}
         >
           <Text>2</Text>
         </View>
               <View
           style={{
-            backgroundColor: 'magenta',
-            height: 100,
-            width: 100,
+            backgroundColor: 'red',
             justifyContent: 'center',
             alignItems: 'center'
           }}
